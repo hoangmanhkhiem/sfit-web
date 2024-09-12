@@ -24,14 +24,14 @@ const teams = [
     icon: '/src/assets/teams/BAN_WEB_ICON.svg',
   },
   {
-    name: 'BAN GAME',
+    name: 'BAN LẬP TRÌNH GAME',
     activate: 'Tạo môi trường học tập và làm việc cho những bạn muốn theo hướng phát triển game (programmer, artist, designer). Thường tổ chức chia đội để tham gia những sự kiện GameJam (GameJam VietNam, GMTK GameJam)',
     leader: 'Trịnh Thành Nam',
     image: '/src/assets/teams/BAN_GAME.jpg',
     icon: '/src/assets/teams/BAN_GAME_ICON.svg',
   },
   {
-    name: 'BAN AI',
+    name: 'BAN DATA&AI',
     activate: 'Nghiên cứu và phát triển các ứng dụng trí tuệ nhân tạo, chia sẻ kiến thức về machine learning và deep learning.',
     leader: 'Phạm Huy Hoàng',
     image: '/src/assets/teams/BAN_AI.jpg',
@@ -85,16 +85,16 @@ function Teams() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className='w-screen'>
+    <div id='team' className='w-screen'>
       <h1
         className="text-center tracking-normal
-                       font-[Inter] text-5xl font-bold text-[#267452]
+                       font-[Inter] md:text-5xl text-xl font-bold text-[#267452]
                        "
       >
         CÁC BAN TRỰC THUỘC
       </h1>
-      <div className="mx-auto mt-2 bg-[#39906A] w-[525px] h-[4px]"></div>
-      <div className='mt-[148px]'>
+      <div className="mx-auto mt-2 bg-[#39906A] md:w-[525px] w-[200px] h-[4px]"></div>
+      <div className='md:mt-[148px] mt-[50px]'>
         {expanded ? (
           teams.map((team, index) => (
             <TeamCard key={index} team={team} type={index % 2 === 0} />
@@ -106,7 +106,7 @@ function Teams() {
         )}
       </div>
       <button
-        className="flex mx-auto mt-4 bg-[#39906A] text-white px-4 py-2 rounded"
+        className="flex mx-auto mt-4 bg-[#39906A] text-white px-4 py-2 rounded relative z-10"
         onClick={() => setExpanded(!expanded)}
       >
         {expanded ? 'Thu gọn' : 'Xem thêm'}
